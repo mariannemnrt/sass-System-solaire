@@ -17,8 +17,8 @@
   border-radius: 100%;
   background-color: purple;
   flex-shrink: 0;
-  transform-origin: -120px 50%;
-  animation: animation-rotate 2s linear infinite;
+  transform-origin: -120px 19.2307692308px;
+  animation: animation-rotate 3s linear infinite;
 }
 .planet--venus {
   width: 90.9090909091px;
@@ -26,6 +26,8 @@
   border-radius: 100%;
   background-color: aquamarine;
   flex-shrink: 0;
+  transform-origin: -178.4615384615px 45.4545454545px;
+  animation: animation-rotate 6s linear infinite;
 }
 .planet--earth {
   width: 100px;
@@ -33,6 +35,8 @@
   border-radius: 100%;
   background-color: blue;
   flex-shrink: 0;
+  transform-origin: -289.3706293706px 45.4545454545px;
+  animation: animation-rotate 10s linear infinite;
   position: relative;
 }
 .planet--mars {

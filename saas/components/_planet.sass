@@ -6,18 +6,21 @@
 
      &--mercury
           @include abstract.circle(abstract.$mercury-size, purple)
-          $center-x: calc(math.div(abstract.$sun-size, -2) - 20px)
-          $center-y:50%
-          transform-origin:$center-x $center-y
-          animation: animation-rotate 2s linear infinite
+          $planet-distance: calc(math.div(abstract.$sun-size, -2) -  abstract.$gap )
+          @include abstract.rotate-around-sun($planet-distance,abstract.$mercury-size, 3s)
           
           
 
      &--venus
           @include abstract.circle(abstract.$venus-size, aquamarine)
+          $planet-distance: calc(math.div(abstract.$sun-size, -2) -  2 * abstract.$gap - abstract.$mercury-size)
+          @include abstract.rotate-around-sun($planet-distance,abstract.$venus-size, 6s)
+          
 
      &--earth
           @include abstract.circle(abstract.$earth-size, blue)
+          $planet-distance: calc(math.div(abstract.$sun-size, -2) -  3 * abstract.$gap - abstract.$mercury-size - abstract.$venus-size)
+          @include abstract.rotate-around-sun($planet-distance,abstract.$venus-size, 10s)
           position: relative
 
 

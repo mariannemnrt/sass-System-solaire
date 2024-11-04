@@ -1,0 +1,23 @@
+@use"sass:math"
+@use "./_variables" as abstract
+
+
+@mixin circle($size,$color:black)
+    width: $size
+    height: $size
+    border-radius: 100%
+    background-color: $color
+    flex-shrink: 0
+
+@mixin rotate-around-planet($duration: 5s, $planet-size)
+    $center-x: 50%
+    $center-y: calc(50% + math.div($planet-size, 2))
+    transform-origin: $center-x $center-y
+    animation: animation-rotate $duration linear infinite
+
+
+@mixin rotate-around-sun($planet-distance, $planet-size, $duration)
+    $center-x: $planet-distance
+    $center-y: math.div($planet-size, 2)
+    transform-origin:$center-x $center-y
+    animation: animation-rotate $duration linear infinite
