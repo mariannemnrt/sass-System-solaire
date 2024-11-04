@@ -6,6 +6,7 @@
 //saturne : 9.4 fois plus grande que la Terre
 //uranus : 4 fois plus grande que la Terre
 //neptune : 3.8 fois plus grande que la Terre
+@use"sass:math"
 $earth-size: 100px
 $mercury-size: calc($earth-size / 2.6)
 
@@ -20,5 +21,12 @@ $satellite-size: 16px
 $moon-period: 2s
 $deimos_period: 2s
 $phobos-period: 3s
-$gap: 20px
-$mercury-distance: 300px
+$gap-between-planets: 20px
+
+$mercury-to-sun: calc(math.div($sun-size, -2) - $gap-between-planets )
+$venus-to-sun: calc($mercury-to-sun - $gap-between-planets - $venus-size)
+$earth-to-sun: calc($venus-to-sun - $gap-between-planets - $earth-size)
+$mars-to-sun: calc($earth-to-sun - $gap-between-planets - $mars-size)
+$jupiter-to-sun: calc($mars-to-sun - $gap-between-planets - $jupiter-size)
+$saturn-to-sun: calc($jupiter-to-sun - $gap-between-planets - $saturn-size)
+$uranus-to-sun: calc($saturn-to-sun - $gap-between-planets - $uranus-size)

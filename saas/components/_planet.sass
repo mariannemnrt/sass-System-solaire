@@ -1,43 +1,72 @@
 @use "../abstract/_all" as abstract
 @use"sass:math"
-.planet
+@use"sass:map"
+
+$list-planets: 'mercury' , 'venus' , 'earth' , 'mars', 'jupiter', 'saturn', 'uranus', 'neptun'
+$planets-size: ("mercury":#{abstract.$mercury-size} ,"venus": #{abstract.$venus-size} ,"earth": #{abstract.$earth-size} ,"mars": #{abstract.$mars-size}, "jupiter": #{abstract.$jupiter-size}, "saturn": #{abstract.$saturn-size}, "uranus": #{abstract.$uranus-size}, "neptun": #{abstract.$neptun-size})
+$planets-to-sun: ("mercury":#{abstract.$mercury-to-sun} ,"venus": #{abstract.$venus-to-sun} ,"earth": #{abstract.$earth-to-sun} ,"mars": #{abstract.$mars-to-sun}, "jupiter": #{abstract.$jupiter-to-sun}, "saturn": #{abstract.$saturn-to-sun}, "uranus": #{abstract.$uranus-to-sun}, "neptun": #{abstract.$neptun-to-sun})
+
      
 
-
+.planet
+     @each $planet in $list-planets
+          &--#{$planet}
+               position: relative
+               $background-planet:"../images/#{$planet}.svg"
+               $size-planet: map.get($planets-size,$planet)
+               $distance-between-planet-and-sun: abstract.$gap-between-planets
+               @include abstract.circle($size-planet, $background-planet)
+               @if $planet=='uranus' or $planet=="saturn"
+                    border-radius: 0
+               @include abstract.rotate-around-sun($distance-between-planet-and-sun,$size-planet, 3s)
+                
+               
+               
      &--mercury
-          @include abstract.circle(abstract.$mercury-size, purple)
-          $planet-distance: calc(math.div(abstract.$sun-size, -2) -  abstract.$gap )
-          @include abstract.rotate-around-sun($planet-distance,abstract.$mercury-size, 3s)
-          
-          
+          //$background: "../images/mercury.svg"
+          //@include abstract.circle(abstract.$mercury-size, $background)
+          $planet-distance: calc(math.div(abstract.$sun-size, -2) - abstract.$gap )
 
      &--venus
-          @include abstract.circle(abstract.$venus-size, aquamarine)
-          $planet-distance: calc(math.div(abstract.$sun-size, -2) -  2 * abstract.$gap - abstract.$mercury-size)
-          @include abstract.rotate-around-sun($planet-distance,abstract.$venus-size, 6s)
-          
+          //$background: "../images/mercury.svg"
+          //@include abstract.circle(abstract.$venus-size, $background)
+          $planet-distance: calc(math.div(abstract.$sun-size, -2) - 2 * abstract.$gap - abstract.$mercury-size)
+          @include abstract.rotate-around-sun($planet-distance,abstract.$mercury-size, 6s)
 
      &--earth
-          @include abstract.circle(abstract.$earth-size, blue)
-          $planet-distance: calc(math.div(abstract.$sun-size, -2) -  3 * abstract.$gap - abstract.$mercury-size - abstract.$venus-size)
-          @include abstract.rotate-around-sun($planet-distance,abstract.$venus-size, 10s)
-          position: relative
-
+          //$background: "../images/earth.svg"
+          //@include abstract.circle(abstract.$earth-size, $background)
+          $planet-distance: calc(math.div(abstract.$sun-size, -2) - 3 * abstract.$gap - abstract.$mercury-size - abstract.$venus-size)
+          @include abstract.rotate-around-sun($planet-distance,abstract.$earth-size, 10s)
+          
 
      &--mars
-          @include abstract.circle(abstract.$mars-size, purple)
+          //$background: "../images/mars.svg"
+          //@include abstract.circle(abstract.$mars-size, $background)
+          $planet-distance: calc(math.div(abstract.$sun-size, -2) - 4 * abstract.$gap - abstract.$mercury-size - abstract.$venus-size - abstract.$earth-size)
+          @include abstract.rotate-around-sun($planet-distance,abstract.$mars-size, 12s)
           position: relative
 
-
      &--jupiter
-          @include abstract.circle(abstract.$jupiter-size, yellow)
+          //$background: "../images/jupiter.svg"
+          //@include abstract.circle(abstract.$jupiter-size, y$background)
+          $planet-distance: calc(math.div(abstract.$sun-size, -2) - 4 * abstract.$gap - abstract.$mercury-size - abstract.$venus-size - abstract.$earth-size - abstract.$mars-size)
+          @include abstract.rotate-around-sun($planet-distance,abstract.$jupiter-size, 14s)
 
      &--saturn
-          @include abstract.circle(abstract.$saturn-size, blue)
+          //$background: "../images/saturn.svg"
+          //@include abstract.circle(abstract.$saturn-size, $background)
+          $planet-distance: calc(math.div(abstract.$sun-size, -2) - 4 * abstract.$gap - abstract.$mercury-size - abstract.$venus-size - abstract.$earth-size - abstract.$mars-size - abstract.$jupiter-size)
+          @include abstract.rotate-around-sun($planet-distance,abstract.$saturn-size, 16s)
 
      &--uranus
-          @include abstract.circle(abstract.$uranus-size)
+          //$background: "../images/uranus.svg"
+          //@include abstract.circle(abstract.$uranus-size,$background)
+          $planet-distance: calc(math.div(abstract.$sun-size, -2) - 4 * abstract.$gap - abstract.$mercury-size - abstract.$venus-size - abstract.$earth-size - abstract.$mars-size - abstract.$jupiter-size - abstract.$saturn-size)
+          @include abstract.rotate-around-sun($planet-distance,abstract.$uranus-size, 18s)
 
      &--neptun
-          @include abstract.circle(abstract.$neptun-size, aquamarine)
-
+          //$background: "../images/yneptune.svg"
+          //@include abstract.circle(abstract.$neptun-size, $background)
+          $planet-distance: calc(math.div(abstract.$sun-size, -2) - 4 * abstract.$gap - abstract.$mercury-size - abstract.$venus-size - abstract.$earth-size - abstract.$mars-size - abstract.$jupiter-size - abstract.$saturn-size - abstract.$uranus-size)
+          @include abstract.rotate-around-sun($planet-distance,abstract.$neptun-size, 20s)

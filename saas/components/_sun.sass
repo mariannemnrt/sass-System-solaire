@@ -3,4 +3,6 @@
 
     
 .sun
-    @include  abstract.circle (abstract.$sun-size, orange)
+    $background: "../images/sun.svg"
+    @include  abstract.circle (abstract.$sun-size, $background)
+    

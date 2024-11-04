@@ -2,11 +2,11 @@
 @use "./_variables" as abstract
 
 
-@mixin circle($size,$color:black)
+@mixin circle($size,$url:"")
     width: $size
     height: $size
     border-radius: 100%
-    background-color: $color
+    background-image: url($url)
     flex-shrink: 0
 
 @mixin rotate-around-planet($duration: 5s, $planet-size)
