@@ -6,6 +6,11 @@
 
      &--mercury
           @include abstract.circle(abstract.$mercury-size, purple)
+          $center-x: calc(math.div(abstract.$sun-size, -2) - 20px)
+          $center-y:50%
+          transform-origin:$center-x $center-y
+          animation: animation-rotate 2s linear infinite
+          
           
 
      &--venus
@@ -14,12 +19,12 @@
      &--earth
           @include abstract.circle(abstract.$earth-size, blue)
           position: relative
-         
+
 
      &--mars
           @include abstract.circle(abstract.$mars-size, purple)
           position: relative
-         
+
 
      &--jupiter
           @include abstract.circle(abstract.$jupiter-size, yellow)

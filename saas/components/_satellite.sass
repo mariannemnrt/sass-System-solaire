@@ -16,14 +16,14 @@
     &--moon
         @extend .satellite
         background-color: grey
-        @include abstract.rotate-around-planet( abstract.$satellite-size, abstract.$earth-size, abstract.$moon-period )
+        @include abstract.rotate-around-planet( abstract.$moon-period, abstract.$earth-size )
 
         
 
     &--phobos
         @extend .satellite
         background-color: white
-        @include abstract.rotate-around-planet(abstract.$satellite-size, abstract.$mars-size, abstract.$phobos-period)
+        @include abstract.rotate-around-planet(abstract.$phobos-period, abstract.$mars-size)
         
        
 
@@ -31,7 +31,7 @@
     &--deimos
         @extend .satellite
         background-color: orange
-        @include abstract.rotate-around-planet(abstract.$satellite-size, abstract.$mars-size, abstract.$deimos-period)
+        @include abstract.rotate-around-planet(abstract.$deimos-period, abstract.$mars-size)
 
 
         

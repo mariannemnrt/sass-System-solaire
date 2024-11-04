@@ -17,8 +17,8 @@
   border-radius: 100%;
   background-color: purple;
   flex-shrink: 0;
-  transform-origin: center center;
-  animation: animation-rotate 3s linear infinite;
+  transform-origin: -120px 50%;
+  animation: animation-rotate 2s linear infinite;
 }
 .planet--venus {
   width: 90.9090909091px;
@@ -93,17 +93,17 @@
 }
 .satellite--moon {
   background-color: grey;
-  transform-origin: center 58px;
+  transform-origin: 50% calc(50% + 50px);
   animation: animation-rotate 2s linear infinite;
 }
 .satellite--phobos {
   background-color: white;
-  transform-origin: center 33px;
+  transform-origin: 50% calc(50% + 25px);
   animation: animation-rotate 3s linear infinite;
 }
 .satellite--deimos {
   background-color: orange;
-  transform-origin: center 33px;
+  transform-origin: 50% calc(50% + 25px);
   animation: animation-rotate 2s linear infinite;
 }
 
