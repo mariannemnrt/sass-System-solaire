@@ -1,0 +1,37 @@
+@use"../abstract/_all" as abstract
+
+
+.satellite
+    background-color: red
+    height: 15px
+    width: 15px
+    border-radius: 100%
+    position: absolute
+    top: 0
+    left: 50%
+    translate: -50% -50%
+    translate: -50% -50%
+
+    
+    &--moon
+        @extend .satellite
+        background-color: grey
+        @include abstract.rotate-around-planet( abstract.$satellite-size, abstract.$earth-size, abstract.$moon-period )
+
+        
+
+    &--phobos
+        @extend .satellite
+        background-color: white
+        @include abstract.rotate-around-planet(abstract.$satellite-size, abstract.$mars-size, abstract.$phobos-period)
+        
+       
+
+
+    &--deimos
+        @extend .satellite
+        background-color: orange
+        @include abstract.rotate-around-planet(abstract.$satellite-size, abstract.$mars-size, abstract.$deimos-period)
+
+
+        

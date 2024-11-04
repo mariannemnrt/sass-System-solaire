@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>Soleil</div>
-    <div>Mercure</div>
-    <div>Venus</div>
-    <div>Terre</div>
-    <div>Mars</div>
-    <div>Jupiter</div>
-    <div>Saturne</div>
-    <div>Uranus</div>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sass Coder le systeme solaire</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="galaxy">
+    <div class="sun">Soleil</div>
+    <div class="planet planet--mercury">Mercure</div>
+    <div class="planet planet--venus">Venus</div>
+    <div class="planet planet--earth">
+      Terre
+      <div class="satellite--moon"></div>
+    </div>
+    <div class="planet planet--mars">Mars
+        <div class="satellite--phobos">phobos</div>
+        <div class="satellite--deimos">deimos</div>
+    </div>
+    <div class="planet planet--jupiter">Jupiter</div>
+    <div class="planet planet--saturn">Saturne</div>
+    <div class="planet planet--uranus">Uranus</div>
+    <div class="planet planet--neptun">Neptune</div>
+  </body>
 </html>

@@ -1,0 +1,35 @@
+@use "../abstract/_all" as abstract
+@use"sass:math"
+.planet
+     
+
+
+     &--mercury
+          @include abstract.circle(abstract.$mercury-size, purple)
+          
+
+     &--venus
+          @include abstract.circle(abstract.$venus-size, aquamarine)
+
+     &--earth
+          @include abstract.circle(abstract.$earth-size, blue)
+          position: relative
+         
+
+     &--mars
+          @include abstract.circle(abstract.$mars-size, purple)
+          position: relative
+         
+
+     &--jupiter
+          @include abstract.circle(abstract.$jupiter-size, yellow)
+
+     &--saturn
+          @include abstract.circle(abstract.$saturn-size, blue)
+
+     &--uranus
+          @include abstract.circle(abstract.$uranus-size)
+
+     &--neptun
+          @include abstract.circle(abstract.$neptun-size, aquamarine)
+
